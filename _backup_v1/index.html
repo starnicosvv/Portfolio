@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adolfo Sanabria — Backend Developer. Python, FastAPI, PostgreSQL. Portfolio 8-bit." />
+  <title>ADOLFO SANABRIA // BACKEND.DEV</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23050a08'/%3E%3Crect x='2' y='3' width='12' height='10' fill='%233dffa0'/%3E%3Crect x='4' y='5' width='3' height='3' fill='%23050a08'/%3E%3Crect x='9' y='5' width='3' height='3' fill='%23050a08'/%3E%3Crect x='6' y='9' width='4' height='2' fill='%23050a08'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======================= BOOT / INTRO ======================= -->
+  <div id="boot" class="boot is-visible" role="dialog" aria-label="welcome">
+    <div class="boot-inner">
+      <div id="bootSprite" class="pixel-sprite boot-sprite" aria-hidden="true"></div>
+      <p class="boot-kicker" data-i18n="boot.kicker">DEV BACKEND · PYTHON · FASTAPI</p>
+      <h1 class="boot-title" data-text="ADOLFO SANABRIA">ADOLFO SANABRIA</h1>
+      <p class="boot-tagline" data-i18n="boot.tagline">Construyo APIs y sistemas backend completos: auth con JWT, roles multi-tenant, seguridad y tests. Desde un SaaS para gimnasios hasta gesti&oacute;n acad&eacute;mica universitaria.</p>
+      <div class="boot-proof">
+        <span data-i18n="boot.p1">292+ tests</span>
+        <span data-i18n="boot.p2">2 proyectos backend 100%</span>
+        <span data-i18n="boot.p3">auditor&iacute;a de seguridad cerrada</span>
+      </div>
+      <div class="lang-wave">
+        <span class="lang-label" data-i18n="boot.lang">IDIOMA / LANGUAGE</span>
+        <span class="lang-pills">
+          <button class="lang-btn" data-set-lang="es">ES</button>
+          <button class="lang-btn" data-set-lang="en">EN</button>
+        </span>
+      </div>
+      <button id="pressStart" class="press-start" data-i18n="boot.press">▶ ENTRA AL PORTFOLIO</button>
+      <p class="boot-hint-line" data-i18n="boot.hint">ENTER o clic</p>
+    </div>
+  </div>
+
+  <!-- ======================= CRT OVERLAY ======================= -->
+  <div class="crt" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ======================= TOP MENU ======================= -->
+  <button id="menuBtn" class="menu-btn" aria-label="menu">MENU</button>
+  <nav id="topbar" class="topbar" aria-label="game menu">
+    <button data-goto="inicio">&#9654; <span data-i18n="nav.start">START</span></button>
+    <button data-goto="status">&#9679; <span data-i18n="nav.status">STATUS</span></button>
+    <button data-goto="dungeons">&#9876; <span data-i18n="nav.dungeons">DUNGEONS</span></button>
+    <button data-goto="quest">&#10022; <span data-i18n="nav.quest">QUEST</span></button>
+    <button data-goto="contact">&#9993; <span data-i18n="nav.contact">CONTACT</span></button>
+  </nav>
+
+  <div id="soundToggle" class="sound-toggle" title="M">SOUND:ON</div>
+  <div id="fps" class="fps" title="FPS counter (fake)">FPS:60</div>
+
+  <main id="game">
+
+    <!-- ============ SECTION: TITLE ============ -->
+    <section id="inicio" class="hero section">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div id="heroSprite" class="pixel-sprite hero-sprite" aria-hidden="true"></div>
+        <header class="hero-title">
+          <div class="title-badge" data-i18n="hero.badge">CLASS: BACKEND DEV</div>
+          <h1 class="title-glitch" data-text="ADOLFO SANABRIA">ADOLFO SANABRIA</h1>
+          <p class="subtitle"><span data-i18n="hero.sub1">PYTHON</span> <span class="accent">•</span> <span data-i18n="hero.sub2">FASTAPI</span> <span class="accent">•</span> <span data-i18n="hero.sub3">APIs QUE FUNCIONAN</span></p>
+        </header>
+      </div>
+      <div class="scroll-hint">
+        <span data-i18n="hero.continue">[ BAJA PARA VER MI FICHA ]</span>
+        <div class="arrow">&#8595;</div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: STATUS / ABOUT ============ -->
+    <section id="status" class="section panel">
+      <div class="section-head">
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <h2><span class="tag">01</span> <span data-i18n="status.title">FICHA DEL PERSONAJE</span></h2>
+        <span class="corner bl"></span><span class="corner br"></span>
+      </div>
+
+      <div class="status-grid">
+        <!-- avatar -->
+        <div class="char-card">
+          <div class="char-name">
+            <div id="charSprite" class="pixel-sprite" aria-hidden="true"></div>
+            <div>
+              <h3 class="name">ADOLFO SANABRIA</h3>
+              <div class="class-line"><span data-i18n="status.class">BACKEND DEV</span> <span class="lvl">LV.∞</span></div>
+            </div>
+          </div>
+
+          <div class="hp-bar">
+            <div class="bar-label"><span data-i18n="status.xp">BACKEND XP</span><span id="hpVal">90</span>/100</div>
+            <div class="bar hp"><div id="hpFill" class="fill"></div></div>
+          </div>
+          <div class="mp-bar">
+            <div class="bar-label"><span data-i18n="status.magic">FUNCIONES MÁGICAS</span><span>FASTAPI</span></div>
+            <div class="bar mp"><div class="fill"></div></div>
+          </div>
+
+          <ul class="status-stats">
+            <li><span data-i18n="status.role">ROL EN PROYECTOS</span><b id="i18n-rolelabel" data-i18n="status.roleval">BACKEND 100%</b></li>
+            <li><span data-i18n="status.lvl">NIVEL PROYECTOS</span><b>2</b></li>
+            <li><span data-i18n="status.tests">TESTS DESPLEGADOS</span><b>292+</b></li>
+            <li><span data-i18n="status.guild">GUILD</span><b><a href="https://github.com/starnicosvv" target="_blank" rel="noopener">@starnicosvv</a></b></li>
+          </ul>
+        </div>
+
+        <!-- bio -->
+        <div class="bio-card">
+          <h3 class="mini-title">&#9654; <span data-i18n="status.biotitle">PERFIL</span></h3>
+          <p data-i18n="status.bio1">Dev backend que vive en Python. Diseño APIs y arquitectura con FastAPI de punta a punta: auth con JWT, roles, aislamiento multi-tenant, seguridad y testing. Los dos proyectos de este mundo son trabajo 100% backend mío.</p>
+          <p data-i18n="status.bio2">Me gusta el código que se puede defender: documented, testeado y ci.</p>
+        </div>
+
+        <!-- stack card -->
+        <div class="stack-card">
+          <h3 class="mini-title">&#9876; <span data-i18n="status.stacktitle">STACK REAL</span></h3>
+          <div class="stack">
+            <div class="stack-item"><b>FASTAPI</b><span data-i18n="stack.fastapi">APIs REST con auth por roles, rate limiting y OpenAPI</span><em>GymPro + UCA</em></div>
+            <div class="stack-item"><b>PYTHON 3.12</b><span data-i18n="stack.python">Servicios, async IO, SQLAlchemy 2.0 asyncio</span><em>GymPro + UCA</em></div>
+            <div class="stack-item"><b>POSTGRESQL</b><span data-i18n="stack.pg">Modelos, aislamiento multi-tenant, migraciones con Alembic</span><em>GymPro + UCA</em></div>
+            <div class="stack-item"><b>JWT + CSRF</b><span data-i18n="stack.jwt">Access/refresh, refresh en httpOnly cookie, CSRF double-submit</span><em>UCA</em></div>
+            <div class="stack-item"><b>PYDANTIC V2</b><span data-i18n="stack.pyd">Schemas de entrada/salida y validaci&oacute;n estricta</span><em>GymPro + UCA</em></div>
+            <div class="stack-item"><b>PYTEST</b><span data-i18n="stack.pytest">292+ tests de API y servicios, CI verde</span><em>GymPro + UCA</em></div>
+            <div class="stack-item"><b>DOCKER</b><span data-i18n="stack.docker">docker-compose de db + redis + app y GitHub Actions</span><em>GymPro + UCA</em></div>
+            <div class="stack-item"><b>REDIS</b><span data-i18n="stack.redis">Cach&eacute; y sesiones</span><em>GymPro</em></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: DUNGEONS / PROJECTS ============ -->
+    <section id="dungeons" class="section panel">
+      <div class="section-head">
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <h2><span class="tag">02</span> <span data-i18n="dungeons.title">MAZMORRAS VENCIDAS</span></h2>
+        <span class="corner bl"></span><span class="corner br"></span>
+      </div>
+      <p class="section-sub" data-i18n="dungeons.sub">Cada mazmorra fue vencida: yo construí su backend completo.</p>
+
+      <div class="dungeons-grid">
+        <!-- Project 1 -->
+        <article class="dungeon-card">
+          <div class="boss-window">
+            <div class="boss-head">
+              <div class="boss-sprite" aria-hidden="true">
+                <span class="boss-label boss-skill">JWT</span>
+              </div>
+              <div class="boss-meta">
+                <span class="boss-name">GYMPRO SAAS</span>
+                <span class="boss-hp"><span data-i18n="d.boss">BOSS</span>: <span data-i18n="d1.subtitle">GESTIÓN DE GIMNASIOS</span></span>
+                <div class="hp-bar"><div class="bar"><div class="fill" style="width:100%"></div></div></div>
+              </div>
+            </div>
+            <div class="boss-fx" aria-hidden="true">
+              <span class="md">ACTIVE</span>
+              <span class="md second">DEFEATED</span>
+              <span class="shout" data-i18n="d1.shout">Te quiero ver subir office en la gym</span>
+            </div>
+          </div>
+
+          <div class="dungeon-body">
+            <h4 data-i18n="d1.title">GYMPRO SAAS</h4>
+            <div class="dungeon-tags">
+              <span>FastAPI</span><span>PostgreSQL 15</span><span>Redis</span><span>SQLAlchemy 2.0 async</span><span>Pydantic v2</span><span>JWT</span><span>Docker</span>
+            </div>
+            <p data-i18n="d1.desc">SaaS para gestión de gimnasios pequeños/medianos. Auth por roles (owner/admin/trainer/receptionist), membresías, asistencia con check-in anti-duplicado, pagos internos y dashboard de KPIs. Aislamiento multi-tenant: cada query filtra por gym_id del token.</p>
+            <ul class="loot">
+              <li><span data-i18n="d1.l1">JWT access + refresh, bcrypt</span></li>
+              <li><span data-i18n="d1.l2">Aislamiento multi-tenant por gym_id</span></li>
+              <li><span data-i18n="d1.l3">Soft-delete, PKs UUID v4</span></li>
+              <li><span data-i18n="d1.l4">6 módulos REST (auth, users, plans, attendance, payments, dashboard)</span></li>
+              <li><span data-i18n="d1.l5">Tests: 10 API + 7 servicios</span></li>
+              <li><span data-i18n="d1.l6">Docker Compose completo</span></li>
+            </ul>
+            <div class="dungeon-actions">
+              <a class="btn" href="https://github.com/dual-devs0/Sistema_para_gym_Py" target="_blank" rel="noopener"><span data-i18n="common.view">VER MAZMORRA</span> &#8594;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="dungeon-card final">
+          <div class="boss-window">
+            <div class="boss-head">
+              <div class="boss-sprite" aria-hidden="true">
+                <span class="boss-label boss-skill">CSRF</span>
+                <span class="boss-label boss-skill second">RATE</span>
+              </div>
+              <div class="boss-meta">
+                <span class="boss-name">SISTEMA ACADÉMICO UCA V2</span>
+                <span class="boss-hp"><span data-i18n="d.boss">BOSS</span>: <span data-i18n="d2.subtitle">GESTIÓN ACADÉMICA UNIVERSITARIA</span></span>
+                <div class="hp-bar"><div class="bar"><div class="fill bossf" style="width:100%"></div></div></div>
+              </div>
+            </div>
+            <div class="boss-fx" aria-hidden="true">
+              <span class="md second">FINAL BOSS</span>
+              <span class="shout" data-i18n="d2.shout">19 fases. 282 tests. Sin excusas.</span>
+            </div>
+          </div>
+
+          <div class="dungeon-body">
+            <h4 data-i18n="d2.title">SISTEMA ACADÉMICO UCA V2</h4>
+            <div class="dungeon-tags">
+              <span>FastAPI</span><span>SQLAlchemy</span><span>Alembic</span><span>PostgreSQL (Neon)</span><span>JWT + CSRF</span><span>Rate limit</span><span>R2</span><span>Stripe</span><span>ReportLab</span>
+            </div>
+            <p data-i18n="d2.desc">Sistema de gestión académica integral (Universidad Católica, PY). 19 fases completas: motor de notas, correlatividades, PPA, financiero, becas, facturación electrónica, trámites, graduación, pasantías, equivalencias y portal docente. Backend tests verdes, CI verde.</p>
+            <ul class="loot">
+              <li><span data-i18n="d2.l1">19 fases implementadas en backend</span></li>
+              <li><span data-i18n="d2.l2">282 tests pytest</span></li>
+              <li><span data-i18n="d2.l3">Auditoría de seguridad: 8 hallazgos corregidos</span></li>
+              <li><span data-i18n="d2.l4">Roles: Alumno, Profesor, Admin</span></li>
+              <li><span data-i18n="d2.l5">JWT refresh en httpOnly cookie + CSRF double-submit</span></li>
+              <li><span data-i18n="d2.l6">PDF/QR, email SMTP, Stripe Checkout</span></li>
+            </ul>
+            <div class="dungeon-actions">
+              <a class="btn" href="https://github.com/dual-devs0/sistema-academico" target="_blank" rel="noopener"><span data-i18n="common.view">VER MAZMORRA</span> &#8594;</a>
+              <a class="btn ghost" href="https://sistema-academico-alpha.vercel.app" target="_blank" rel="noopener">LIVE <span data-i18n="common.live">DESPLIEGUE</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: QUEST LOG / EXPERIENCE ============ -->
+    <section id="quest" class="section panel">
+      <div class="section-head">
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <h2><span class="tag">03</span> <span data-i18n="quest.title">QUEST LOG</span></h2>
+        <span class="corner bl"></span><span class="corner br"></span>
+      </div>
+      <p class="section-sub" data-i18n="quest.sub">Misiones completadas en este mundo de FastAPI.</p>
+
+      <div class="quest-list">
+        <div class="quest complete">
+          <div class="q-icon">&#10003;</div>
+          <div class="q-body">
+            <h4 data-i18n="q1.title">SISTEMA ACADÉMICO UCA V2 — Backend completo</h4>
+            <p data-i18n="q1.desc">Diseñé arquitectura (routers/services/repos), modelos, migraciones, auth de seguridad dura, testing y documentación. 19 fases, 282 tests verdes y auditoría cerrada.</p>
+          </div>
+          <span class="q-xp">+9000 XP</span>
+        </div>
+        <div class="quest complete">
+          <div class="q-icon">&#10003;</div>
+          <div class="q-body">
+            <h4 data-i18n="q2.title">GYMPRO SAAS — Backend completo</h4>
+            <p data-i18n="q2.desc">SaaS multi-tenant de gimnasios: auth por roles, membresías, asistencia, pagos y dashboard, con aislamiento por gym_id desde el token.</p>
+          </div>
+          <span class="q-xp">+4000 XP</span>
+        </div>
+        <div class="quest complete">
+          <div class="q-icon">&#10003;</div>
+          <div class="q-body">
+            <h4 data-i18n="q3.title">AUDITORÍA DE SEGURIDAD PRE-PRODUCCIÓN</h4>
+            <p data-i18n="q3.desc">Chequeo crítico del backend: 8 hallazgos reales corregidos (CSRF desactivable, user enumeration, dependencies sin pinnear, rate limiting).</p>
+          </div>
+          <span class="q-xp">+2000 XP</span>
+        </div>
+        <div class="quest active">
+          <div class="q-icon">?</div>
+          <div class="q-body">
+            <h4 data-i18n="q4.title">PRÓXIMA MISIÓN: TU PROYECTO</h4>
+            <p data-i18n="q4.desc">Backend nuevo, refactor, API, auth o tests. Abierto a misiones freelance o full-time.</p>
+          </div>
+          <a class="btn small" href="#contact" data-i18n="q4.cta">UNIRME A LA MISIÓN</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: CONTACT ============ -->
+    <section id="contact" class="section panel">
+      <div class="section-head">
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <h2><span class="tag">04</span> <span data-i18n="contact.title">UNIRSE AL GREMIO</span></h2>
+        <span class="corner bl"></span><span class="corner br"></span>
+      </div>
+
+      <div class="contact-wrap">
+        <div id="contactSprite" class="pixel-sprite contact-sprite" aria-hidden="true"></div>
+        <p class="contact-line" data-i18n="contact.line">El gremio de los backend te espera. Elegí tu punto de encuentro:</p>
+
+        <div class="contact-cards">
+          <a class="contact-card" href="https://github.com/starnicosvv" target="_blank" rel="noopener">
+            <span class="cc-icon gh">&#916;</span>
+            <span class="cc-main"><b>GITHUB</b> <i>@starnicosvv</i></span>
+            <span class="cc-arrow">&#8594;</span>
+          </a>
+        </div>
+
+        <div class="contact-mini">
+          <span data-i18n="contact.mini1">status: DISPONIBLE</span>
+          <span data-i18n="contact.mini2">nivel: backend</span>
+          <span data-i18n="contact.mini3">loot: FastAPI + opencode</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="panel footer">
+      <div class="footer-line">
+        <span class="blink-cursor">&#9608;</span>
+        <span data-i18n="footer.by">SLIME.DEV — mode DEBUG</span>
+      </div>
+      <div class="footer-hint">
+        <kbd>M</kbd> <span data-i18n="footer.sound">sonido</span> <span class="sep">|</span>
+        <kbd>K</kbd> <span data-i18n="footer.fps">fps</span> <span class="sep">|</span>
+        <kbd>T</kbd> <span data-i18n="footer.test">test rápido</span>
+      </div>
+      <p class="copyright">&copy; 2026 ADOLFO SANABRIA — <span data-i18n="footer.rights">todos los derechos pixelados</span></p>
+    </footer>
+  </main>
+
+  <!-- modal de test rápido -->
+  <div id="testModal" class="modal" hidden>
+    <div class="modal-box">
+      <h3 data-i18n="test.title">CONSOLA DE PRUEBAS</h3>
+      <p data-i18n="test.line">Verifico seguridad y tests de tu portfolio...</p>
+      <pre id="testOut" class="test-out"></pre>
+      <button id="testClose" class="btn" data-i18n="test.close">CERRAR</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
